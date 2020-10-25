@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./favicon.ico">
+  <title>组件开发测试页面</title>
+  <script src="./lib/vue/vue.js" type="text/javascript"></script>
+  <script src="./lib/threeJS/three.js"></script>
+  <script src="./lib/threeJS/VOXLoader.js" type="module"></script>
+  <script src="./style/js/mdui.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="./style/css/mdui.css">
+</head>
+
+<body class="mdui-theme-primary-grey mdui-color-grey-200">
+  <div class="mdui-valign" id="common">
+
+    <!-- v-for 每个模板弹出自定义对话框模板 -->
+
+    <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
+    mdui-dialog="{target:'#model-view'}">Button</button>
+
+    <div mdui-dialog="{target:'#model-view'}" @click="browseModel(vox_models[0])">
+      <div class="mdui-container">
+
+        <div class="mdui-row">
+          <mdui-card v-for="(model, index) in vox_models" v-bind:key="index" v-bind:vox_model="model"></mdui-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdui-dialog" id="model-view">
+      <div class="mdui-dialog-title">标题</div>
+      <div class="mdui-dialog-content">
+        模型,一些介绍,等等.<br>有一个就够了
+      </div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple">下载</button>
+        <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="./lib/common/commonAPP.js"></script>
+</body>
+
+</html>
