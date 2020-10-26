@@ -28,24 +28,26 @@
     <div class="mdui-container mdui-color-theme-200 mdui-text-color-theme-100 mdui-shadow-4">
       <a v-if=is_test href="./test.html">前往测试页面</a>
 
-      <div mdui-dialog="{target:'#v-0'}" @click="browseModel(vox_models[0])">
-        <mdui-card v-for="(model, index) in vox_models" v-bind:key="index" v-bind:vox_model="model"></mdui-card>
+
+      <div mdui-dialog="{target:'#mdui-dialog-voxel'}">
+        <mdui-card v-for="(model, index) in vox_models" :key="index" :vox_model="model"></mdui-card>
       </div>
 
-      <div class="mdui-dialog" id="v-0">
+    </div>
+
+    <div class="mdui-dialog" id="mdui-dialog-voxel">
+      <div class="mdui-dialog-content">
         <div class="mdui-dialog-title">标题</div>
-        <div class="mdui-dialog-content">
-          模型,一些介绍,等等.<br>有一个就够了
-        </div>
-        <div class="mdui-dialog-actions">
-          <button class="mdui-btn mdui-ripple">下载</button>
-          <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
-        </div>
+        <div id="vox"></div>
+        模型,作者,一些介绍,等等.<br>以及下载
       </div>
-      
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple">下载</button>
+        <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+      </div>
     </div>
   </div>
-  <script src="./lib/common/commonAPP.js" type="text/javascript"></script>
+  <script src="./lib/common/commonAPP.js" type="module"></script>
 </body>
 
 </html>

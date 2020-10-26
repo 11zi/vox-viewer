@@ -9,6 +9,7 @@
   <script src="./lib/vue/vue.js" type="text/javascript"></script>
   <script src="./lib/threeJS/three.js"></script>
   <script src="./lib/threeJS/VOXLoader.js" type="module"></script>
+  <script src="./lib/threeJS/OrbitControls.js" type="module"></script>
   <script src="./style/js/mdui.js" type="text/javascript"></script>
   <link rel="stylesheet" href="./style/css/mdui.css">
 </head>
@@ -23,7 +24,6 @@
 
     <div mdui-dialog="{target:'#model-view'}" @click="browseModel(vox_models[0])">
       <div class="mdui-container">
-
         <div class="mdui-row">
           <mdui-card v-for="(model, index) in vox_models" v-bind:key="index" v-bind:vox_model="model"></mdui-card>
         </div>
@@ -31,9 +31,11 @@
     </div>
 
     <div class="mdui-dialog" id="model-view">
-      <div class="mdui-dialog-title">标题</div>
+      <div class="mdui-dialog-title">v_model.name</div>
       <div class="mdui-dialog-content">
-        模型,一些介绍,等等.<br>有一个就够了
+        <div id="vox"></div>
+        v-model.author
+        v-model.description
       </div>
       <div class="mdui-dialog-actions">
         <button class="mdui-btn mdui-ripple">下载</button>
@@ -42,7 +44,7 @@
     </div>
 
   </div>
-  <script src="./lib/common/commonAPP.js"></script>
+  <script src="./lib/common/commonAPP.js" type="module"></script>
 </body>
 
 </html>
