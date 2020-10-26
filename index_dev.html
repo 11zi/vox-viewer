@@ -8,15 +8,11 @@
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link rel="icon" href="./favicon.ico">
   <title>Magica Voxel</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
-    integrity="sha512-yNJzAsg5JyP91u+sLHlUDULMBd3hmEiVkYeeN1cQBKaLZ7EyT6oH2u5THNIRM2Fu6VKcZJv+F/QAp1h/qzy9Ow=="
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"
-    integrity="sha384-aB8rnkAu/GBsQ1q6dwTySnlrrbhqDwrDnpVHR2Wgm8pWLbwUnzDcIROX3VvCbaK+"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"
-    integrity="sha384-2PJ2u4NYg6jCNNpv3i1hK9AoAqODy6CdiC+gYiL2DVx+ku5wzJMFNdE3RoWfBIRP" crossorigin="anonymous" />
+  <script src="./lib/vue/vue.js" type="text/javascript"></script>
+  <script src="./lib/threeJS/three.js"></script>
+  <script src="./lib/threeJS/VOXLoader.js" type="module"></script>
+  <script src="./style/js/mdui.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="./style/css/mdui.css">
 </head>
 
 <body class="mdui-theme-primary-grey mdui-color-grey-200">
@@ -37,7 +33,7 @@
 
     </div>
 
-    <div class="mdui-dialog" id="mdui-dialog-voxel" style="min-height: 92%;">
+    <div class="mdui-dialog" id="mdui-dialog-voxel">
       <div class="mdui-dialog-content mdui-typo">
         <div class="mdui-dialog-title">{{ focus_on.name }}</div>
         <div id="vox"></div>
