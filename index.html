@@ -7,7 +7,7 @@
   <meta name="author" content="沈维杰">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link rel="icon" href="./favicon.ico">
-  <title>Magica Voxel</title>
+  <title>VOX Viewer</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
     integrity="sha512-yNJzAsg5JyP91u+sLHlUDULMBd3hmEiVkYeeN1cQBKaLZ7EyT6oH2u5THNIRM2Fu6VKcZJv+F/QAp1h/qzy9Ow=="
@@ -21,15 +21,15 @@
 
 <body class="mdui-theme-primary-grey mdui-color-grey-200">
   <div id="common">
-    <div class="mdui-toolbar mdui-color-grey-900 mdui-appbar-scroll-toolbar-hide mdui-shadow-4">
-      <div class="mdui-container mdui-center">
-        <p class="mdui-typo-title">Magica Voxel | 在网页上查看vox模型</p>
+    <div class="mdui-toolbar mdui-color-grey-800 mdui-appbar-scroll-toolbar-hide mdui-shadow-4">
+      <div style="width: 92%; margin: auto;">
+        <span class="mdui-typo-title mdui-text-color-theme-50">VOX Viewer | 查看vox模型</span>
       </div>
     </div>
 
     <mdui-progress v-if="is_progressing"></mdui-progress>
 
-    <div class="mdui-container mdui-color-theme-200 mdui-text-color-theme-100 mdui-shadow-4">
+    <div class="mdui-container mdui-color-theme-200 mdui-shadow-2">
 
       <div mdui-dialog="{target:'#mdui-dialog-voxel'}">
         <mdui-card v-for="(model, index) in vox_models" :key="index" :vox_model="model"></mdui-card>
@@ -41,13 +41,14 @@
       <div class="mdui-dialog-content mdui-typo">
         <div class="mdui-dialog-title">{{ focus_on.name }}</div>
         <div id="vox"></div>
-        <h4>{{ focus_on.author }}</h4>
+        <h4><i class="mdui-icon material-icons">person</i>{{ focus_on.author }}</h4>
         <hr>
         <p>{{ focus_on.description }}</p>
 
       </div>
       <div class="mdui-dialog-actions">
-        <button class="mdui-btn mdui-ripple" @click="downloadVoxModel">下载</button>
+        <button class="mdui-btn mdui-ripple" @click="downloadVoxModel"><i
+            class="mdui-icon material-icons mdui-icon-left">file_download</i>下载</button>
         <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
       </div>
     </div>
